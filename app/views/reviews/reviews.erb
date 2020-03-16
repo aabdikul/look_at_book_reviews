@@ -1,0 +1,8 @@
+<center><h1>Reviews From Around the Library</h1></center>
+
+<p><h2>Reviews:</h2> <% @reviews.each do |review| %>
+	<p><%= review.book %></p>
+	<p><%= review.summary %></p>
+	<% end %></p>
+
+<a href = "/logout">Log Out</a>

@@ -1,0 +1,10 @@
+<h1><center>Write a New Review</center></h1>
+
+<form method = "POST" action = "/reviews/new">
+	<% @books.each do |book|%>
+	<p><input type = "radio" name = "<%=book.title%>" id = "<%=book.id%>"><%=book.title%>, <%=book.author%></p>
+	<% end %>
+	<p><input type = "text" name = "review" id = "review"></p>
+	<input type = "submit" name = "submit" id = "submit" value = "Submit Your Review">
+
+</form>
