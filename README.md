@@ -1,4 +1,4 @@
-# LookAtBookReviews
+# Look At Book Reviews
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/look_at_book_reviews`. To experiment with that code, run `bin/console` for an interactive prompt.
 
@@ -22,7 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+The Look at Book Reviews gem is an application that lets users create accounts using usernames, emails, and passwords, to log into the application. 
+
+Once logged in, a user can add books and write reviews for those books. The user can see all reviews or reviews for a specific book. When a user wants to edit or delete a review, they can do so only for their own reviews. A user cannot delete or edit another user's book review. 
+
+Happy reading and happy reviewing!  
 
 ## Development
 
