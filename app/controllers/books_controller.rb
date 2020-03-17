@@ -14,8 +14,11 @@ class BooksController < ApplicationController
 		redirect '/books'
 	end
 
-	get '/books/:slug'
+	get '/books/:slug' do
 		@book = Book.find_by_slug(params[:slug])
+		binding.pry
+		@reviews = @book.reviews
+		erb :'/reviews/show_review'
 	end
 
 end

@@ -2,7 +2,7 @@
 
 <form method = "POST" action = "/reviews/new">
 	<% @books.each do |book|%>
-	<p><input type = "radio" name = "<%=book.title%>" id = "<%=book.id%>"><%=book.title%>, <%=book.author%></p>
+	<p><input type = "radio" name = "book_id" id = "<%=book.id%>" value = "<%=book.id%>"><%=book.title%>, <%=book.author%></p>
 	<% end %>
 	<p><input type = "text" name = "review" id = "review"></p>
 	<input type = "submit" name = "submit" id = "submit" value = "Submit Your Review">

@@ -23,7 +23,9 @@ class ReviewsController < ApplicationController
 	post '/reviews/new' do 
 		@review = Review.create(summary: params[:review])
 		@user = User.find_by(id: session[:user_id])
+		@book = Book.find_by(id: params[:book_id])
 		@user.reviews << @review
+		@book.reviews << @review
 		redirect '/reviews'
 	end
 

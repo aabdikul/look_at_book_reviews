@@ -39,7 +39,9 @@ class ApplicationController < Sinatra::Base
     	if @user && @user.authenticate(params[:password])
     	session[:user_id] = @user.id
     	redirect '/reviews'
-    	end
+    	else 
+    	redirect '/signup'
+   		end	
     end
 
     get '/logout' do 

@@ -1,7 +1,8 @@
 <center><h1>All the Books in Our Library</h1></center>
 
 <% @books.each do |book| %>
-<b>Title:</b> <p><%= book.title %></p>
-<b>Author:</b> <p><%= book.author %></p>
+<b>Title:</b> <%= book.title %><br>
+<b>Author:</b> <%= book.author %><br>
+<p><a href = "/book/<%=book.slug%>">View Reviews for <%= book.title%></a><br></p>
 <% end %>
 
