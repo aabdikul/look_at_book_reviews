@@ -8,7 +8,8 @@
 
 <p><h2>All Reviews:</h2> <% @reviews.each do |review| %>
 	<p><b>Username:</b> <%= review.user.username %></p>
-	<p><b>Book Title:</b> <%= review.book.title %></p>
+	<p><b>Book Title: </b><a href = "/reviews/new/<%=review.book.slug%>"><%= review.book.title %></a></p>
+	
 	<p><b>Review Summary:</b> <%= review.summary %></p>
 	<p><a href = "/reviews/<%=review.id%>" class = "button">View this Review</a>
 	<% end %></p>

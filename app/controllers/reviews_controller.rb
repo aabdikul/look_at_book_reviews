@@ -1,4 +1,8 @@
+require 'rack-flash'
+
 class ReviewsController < ApplicationController
+
+	use Rack::Flash
 
 	get '/reviews' do 
 		if logged_in?
@@ -22,12 +26,17 @@ class ReviewsController < ApplicationController
 	end
 
 	post '/reviews/new' do 
-		@review = Review.create(summary: params[:review])
-		@user = User.find_by(id: session[:user_id])
-		@book = Book.find_by(id: params[:book_id])
-		@user.reviews << @review
-		@book.reviews << @review
-		redirect '/reviews'
+		if params[:review] != ""
+			@review = Review.create(summary: params[:review])
+			@user = User.find_by(id: session[:user_id])
+			@book = Book.find_by(id: params[:book_id])
+			@user.reviews << @review
+			@book.reviews << @review
+			redirect '/reviews'
+		else
+			flash[:message] = "Please do not submit a blank review!"
+			redirect '/reviews/new'
+		end
 	end
 
 	get '/reviews/new/:slug' do 

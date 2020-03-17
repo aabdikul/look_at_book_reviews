@@ -1,3 +1,4 @@
+
 <h1><center>Write a New Review</center></h1>
 
 <form method = "POST" action = "/reviews/new">
@@ -6,5 +7,11 @@
 	<% end %>
 	<p><input type = "text" name = "review" id = "review"></p>
 	<input type = "submit" name = "submit" id = "submit" value = "Submit Your Review">
+<p>
+<% if flash.has?(:message) %>
+  <font color = "red"><b><%= flash[:message] %></b></font>
+<% end %>
+</p>
 
 </form>
+

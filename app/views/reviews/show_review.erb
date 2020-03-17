@@ -1,7 +1,7 @@
 <h1><center>View Book Reviews for <%=@book.title%></center></h1>
 <center><h2>By: <%=@book.author%></h2></center>
 
-<a href = "/reviews/new/<%=@book.slug%>" class = "button">Write Your Own Review</a>
+<a href = "/reviews/new" class = "button">Write Your Own Review</a>
 
 <% @reviews.each do |review| %>
 <p><b>Username: </b><%= review.user.username %></p>
