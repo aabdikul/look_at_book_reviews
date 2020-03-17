@@ -1,4 +1,4 @@
-<center><h1>Reviews From Around the Library</h1></center>
+<center><h1 class = "title">Reviews From Around the Library</h1></center>
 
 <a href = "/books/add" class = "button">Add a New Book to the Library</a>
 
@@ -6,7 +6,7 @@
 
 <p> <a href = "/users/<%=@user.username%>" class = "button">My Reviews</a></p>
 
-<p><h2>All Reviews:</h2> <% @reviews.each do |review| %>
+<p><h2 class = "title" >All Reviews:</h2> <% @reviews.each do |review| %>
 	<p><b>Username:</b> <%= review.user.username %></p>
 	<p><b>Book Title: </b><a href = "/reviews/new/<%=review.book.slug%>"><%= review.book.title %></a></p>
 	
