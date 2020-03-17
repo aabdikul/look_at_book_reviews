@@ -18,8 +18,13 @@ class BooksController < ApplicationController
 	end
 
 	post '/books/add' do 
-		@book = Book.create(title: params[:title], author: params[:author])
-		redirect '/books'
+		if Book.find_by(title: params[:title]) == nil 
+			@book = Book.create(title: params[:title], author: params[:author])
+			redirect '/books'
+		else 
+			flash[:message] = "This book is already in our database."
+			redirect '/books/add'
+		end
 	end
 
 	get '/books/:slug' do
