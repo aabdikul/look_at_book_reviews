@@ -1,0 +1,11 @@
+<h1><center>View the Review for <%=@review.book.title%></center></h1>
+
+<b>Username:</b> <%=@review.user.username%>
+<p><b>Review:</b> <%= @review.summary %><br></p>
+<a href = "/reviews/<%=@review.id%>/edit" class = "button">Edit this Review</a>
+<form method="post" action="/reviews/<%= @review.id %>">
+  <input type="hidden" name="_method" value="delete" />
+  <p><input type="submit"name = "Delete Review" value = "Delete Review"></p>
+</form>
+
+<p><a href = "/reviews" class = "button">Back to Reviews</a></p>

@@ -1,0 +1,13 @@
+<center><h1>Edit Your Review</h1></center>
+
+<form action='/reviews/<%=@review.id%>' method="POST">
+
+<input id="hidden" type="hidden" name="_method" value="PATCH">
+
+<p><b>Your Original Review:</b> <%=@review.summary%></p>	
+
+  <p><b>Edit Your Review:</b> <input type="text" name="summary" value = "<%@review.summary%>"></p>
+
+  <p><input type="submit" name="submit" id="submit"></p>
+
+</form>

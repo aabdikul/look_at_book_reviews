@@ -3,6 +3,6 @@
 <% @books.each do |book| %>
 <b>Title:</b> <%= book.title %><br>
 <b>Author:</b> <%= book.author %><br>
-<p><a href = "/book/<%=book.slug%>">View Reviews for <%= book.title%></a><br></p>
+<p><a href = "/books/<%=book.slug%>" class = "button">View Reviews for <%= book.title%></a></p>
 <% end %>
 

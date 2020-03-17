@@ -3,16 +3,35 @@
   <head>
     <title></title>
   </head>
-
   <body>
   	<style>
-		body {
- 		background-image: url("https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2767&q=80");
-  		background-repeat: no-repeat;
-  		background-attachment: fixed;
-  		background-size: cover;
+		  body {
+ 		   background-image: url("https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2767&q=80");
+  		    background-repeat: no-repeat;
+  		    background-attachment: fixed;
+  		    background-size: cover;
 			}
 	</style>
+
+  <style>
+  .button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  }
+  </style>
+  <% if logged_in? %>
+      <a href = "/logout" class = "button">Log Out</a>
+  <% else %>
+      <a href = "/signup" class = "button">Sign Up</a>
+      <a href = "/login" class = "button">Log In</a>
+  <% end %>
 
     <%= yield %>
 

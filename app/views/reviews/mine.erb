@@ -1,0 +1,9 @@
+<center><h1>Viewing <%=@user.username%>'s Reviews</h1></center>
+
+<% @reviews.each do |review| %>
+<p><b>Book Title:</b> <%= review.book.title %></p>
+<p><b>Review:</b> <%= review.summary %></p><br>
+<% end %>
+
+<a href = "/reviews" class = "button">Return to All Reviews</a>
+

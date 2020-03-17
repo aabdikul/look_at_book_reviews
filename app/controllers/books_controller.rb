@@ -1,12 +1,20 @@
 class BooksController < ApplicationController
 
 	get '/books' do
-		@books = Book.all
-		erb :'/books/books'
+		if logged_in?
+			@books = Book.all
+			erb :'/books/books'
+		else 
+			redirect '/login'
+		end
 	end
 
 	get '/books/add' do 
+		if logged_in? 
 		erb :'/books/add'
+		else 
+			redirect '/login'
+		end
 	end
 
 	post '/books/add' do 
@@ -15,10 +23,13 @@ class BooksController < ApplicationController
 	end
 
 	get '/books/:slug' do
-		@book = Book.find_by_slug(params[:slug])
-		binding.pry
-		@reviews = @book.reviews
-		erb :'/reviews/show_review'
+		if logged_in?
+			@book = Book.find_by_slug(params[:slug])
+			@reviews = @book.reviews
+			erb :'/reviews/show_review'
+		else 
+			redirect '/login'
+		end
 	end
 
 end
